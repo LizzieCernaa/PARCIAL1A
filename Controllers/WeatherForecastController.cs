@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using PARCIAL1A.Controllers.models;
 
 namespace PARCIAL1A.Controllers
 {
@@ -30,4 +31,48 @@ namespace PARCIAL1A.Controllers
             .ToArray();
         }
     }
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AutoresController : ControllerBase
+    {
+        
+    }
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class PostsController : ControllerBase
+    {
+
+        [HttpGet("Ultimos20PorAutor")]
+        public ActionResult<IEnumerable<Post>> ObtenerAutor(string nombreAutor)
+        {
+
+        }
+    }
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class LibrosController : ControllerBase
+    {
+        // Implementa los métodos CRUD para la entidad Libro
+        [HttpGet("BuscarPorAutor")]
+        public ActionResult<IEnumerable<Libro>> BuscarAutor(string nombreAutor)
+        {
+        }
+
+        [HttpGet("PostsPorLibro")]
+        public ActionResult<IEnumerable<Post>> ObtenerLibro(int libroId)
+        {
+        }
+    }
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AutoresLibroController : ControllerBase
+    {
+    }
+
+
+
 }
